@@ -49,7 +49,6 @@ Clone this repository or download the compressed file, then extract to your comp
 Create your fragments which extend `EasyIntroFragment` and provide your desired layout resource as you always do:
 ```java
 public class IntroOneFragment extends EasyIntroFragment {
-    @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         return inflater.inflate(R.layout.intro_one, container, false);
