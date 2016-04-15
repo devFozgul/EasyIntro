@@ -54,7 +54,7 @@ import io.github.meness.easyintro.views.RightToggleIndicator;
 public abstract class EasyIntro extends AppCompatActivity implements IEasyIntro, OnToggleIndicatorsClickListener, OnSlideListener, OnNextClickListener, OnPreviousClickListener, OnDoneClickListener, OnSkipClickListener {
     private static final String TAG = EasyIntro.class.getSimpleName();
     private final EasyPagerAdapter mAdapter = new EasyPagerAdapter(getSupportFragmentManager());
-    public ViewGroup mIndicatorsContainer;
+    private ViewGroup mIndicatorsContainer;
     private DirectionalViewPager mPager;
     private MaterializeBuilder materializeBuilder;
     @RawRes
