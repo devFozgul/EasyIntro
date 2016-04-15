@@ -4,7 +4,7 @@
 
 If any (or all) of these questions seem familiar, the **EasyIntro** is the perfect library for you.
 
-**Never** waste your time again. It provides you with the easiest possible implementation of an intro for your application. There is an Activity and Fragment with lots of methods, provide custom page indicator, custom toggle indicators, custom colors, custom themes, custom slide transformer ... No limits for customizations.
+**Never** waste your time again. It provides you with the easiest possible implementation of an intro for your application. There is an Activity and Fragment with lots of methods, provide custom page indicator, custom toggle indicators, custom colors, custom themes, custom slide transformers ... No limits for customizations.
 
 ## A Quick Overview What's In
 * The easiest possible integration
