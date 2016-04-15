@@ -1,5 +1,5 @@
 # EasyIntro [![Codacy Badge](https://api.codacy.com/project/badge/grade/e93c6273804a4dbc91a298a66fed99be)](https://www.codacy.com/app/aesshoferi/EasyIntro) [![Gitter](https://badges.gitter.im/meNESS/EasyIntro.svg)](https://gitter.im/meNESS/EasyIntro?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
-![Image](https://raw.githubusercontent.com/meNESS/EasyIntro/banner.png)
+![Image](https://raw.githubusercontent.com/meNESS/EasyIntro/master/banner.png)
 > Does your application **contain an Intro**? Do you want to have it **up and running in less than 5 minutes**? Do you want your intro to follow the **Android Design Guidelines**? Do you need **flexibility**? Do you believe Google is wrong with not providing **native intro**? Do you want a **simple and easy** to understand API?
 
 If any (or all) of these questions seem familiar, the **EasyIntro** is the perfect library for you.
@@ -30,6 +30,9 @@ If any (or all) of these questions seem familiar, the **EasyIntro** is the perfe
 * Tested and stable
 * Absolutely no limits
 
+## WIKI
+You surely can find more details on [the wiki page](https://github.com/meNESS/EasyIntro/wiki).
+
 ## Include to Project
 ### Provide the Gradle Dependency
 Add the dependency:
@@ -38,7 +41,7 @@ dependencies {
 	compile 'io.github.meness:easyintro:x.y.z'
 }
 ```
-**Note:** Replace `x.y.z` with the latest version which can be found at [releases section](../../releases).
+**Note:** Replace `x.y.z` with the latest version which can be found at [releases section](https://github.com/meNESS/EasyIntro/releases).
 ### Clone or Download `.zip` file
 Clone this repository or download the compressed file, then extract to your computer. Simply import the `library` module to your project.
 
@@ -48,7 +51,7 @@ Create your fragments which extend `EasyIntroFragment` and provide your desired 
 public class IntroOneFragment extends EasyIntroFragment {
     @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         return inflater.inflate(R.layout.intro_one, container, false);
     }
 }
