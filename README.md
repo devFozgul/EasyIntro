@@ -60,9 +60,13 @@ public class IntroOneFragment extends EasyIntroFragment {
 Create an activity which extends `EasyIntro` and override the necessary `init()` method:
 ```java
 public class MyEasyIntro extends EasyIntro {
+    
+    // override all listeners you need
+    
     @Override
     protected void init() {
-        // add slides and modify intro settings here
+        // use withSlide() to add Fragments and
+        // modify intro settings here
     }
 }
 ```
