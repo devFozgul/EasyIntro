@@ -1,4 +1,4 @@
-# EasyIntro [![Codacy Badge](https://api.codacy.com/project/badge/grade/e93c6273804a4dbc91a298a66fed99be)](https://www.codacy.com/app/aesshoferi/EasyIntro) [![Gitter](https://badges.gitter.im/meNESS/EasyIntro.svg)](https://gitter.im/meNESS/EasyIntro?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
+# EasyIntro [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-EasyIntro-green.svg?style=true)](https://android-arsenal.com/details/1/3448) [![Codacy Badge](https://api.codacy.com/project/badge/grade/e93c6273804a4dbc91a298a66fed99be)](https://www.codacy.com/app/aesshoferi/EasyIntro) [![Gitter](https://badges.gitter.im/meNESS/EasyIntro.svg)](https://gitter.im/meNESS/EasyIntro?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 ![Image](https://raw.githubusercontent.com/meNESS/EasyIntro/master/banner.png)
 > Does your application **contain an Intro**? Do you want to have it **up and running in less than 5 minutes**? Do you want your intro to follow the **Android Design Guidelines**? Do you need **flexibility**? Do you believe Google is wrong with not providing **native intro**? Do you want a **simple and easy** to understand API?
 
