@@ -41,7 +41,7 @@ dependencies {
 	compile 'io.github.meness:easyintro:x.y.z'
 }
 ```
-**Note:** Replace `x.y.z` with the latest version which can be found at [releases section](https://github.com/meNESS/EasyIntro/releases).
+**Note:** Replace `x.y.z` with the latest version which can be found at [releases page](https://github.com/meNESS/EasyIntro/releases).
 ### Clone or Download `.zip` file
 Clone this repository or download the compressed file, then extract to your computer. Simply import the `library` module to your project.
 
