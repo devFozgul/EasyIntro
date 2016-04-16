@@ -46,7 +46,7 @@ dependencies {
 Clone this repository or download the compressed file, then extract to your computer. Simply import the `library` module to your project.
 
 ## Usage
-Create your fragments which extend `EasyIntroFragment` and provide your desired layout resource as you always do:
+Create your Fragments which extend `EasyIntroFragment` and provide your desired layout resource as you always do:
 ```java
 public class IntroOneFragment extends EasyIntroFragment {
     @Override
