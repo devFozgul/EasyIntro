@@ -16,40 +16,19 @@
 
 package io.github.meness.easyintro.app;
 
-import android.support.v4.app.Fragment;
-
 import io.github.meness.easyintro.EasyIntro;
+import io.github.meness.easyintro.app.fragments.EndFragment;
+import io.github.meness.easyintro.app.fragments.HelloFragment;
+import io.github.meness.easyintro.app.fragments.GroupedSlides;
+import io.github.meness.easyintro.enums.SlideTransformer;
 
 public class MyEasyIntro extends EasyIntro {
     @Override
-    public void onSlide(Fragment fragment) {
-        super.onSlide(fragment);
-    }
-
-    @Override
-    public void onSkipClick(Fragment fragment) {
-        super.onSkipClick(fragment);
-    }
-
-    @Override
-    public void onPreviousClick(Fragment fragment) {
-        super.onPreviousClick(fragment);
-    }
-
-    @Override
-    public void onDoneClick(Fragment fragment) {
-        super.onDoneClick(fragment);
-    }
-
-    @Override
-    public void onNextClick(Fragment fragment) {
-        super.onNextClick(fragment);
-    }
-
-    @Override
     protected void init() {
-        withSlide(IntroOneFragment.instantiate(getApplicationContext(), IntroOneFragment.class.getName()));
-        withSlide(IntroTwoFragment.instantiate(getApplicationContext(), IntroTwoFragment.class.getName()));
-        withSlide(IntroOneFragment.instantiate(getApplicationContext(), IntroOneFragment.class.getName()));
+        withSlide(HelloFragment.instantiate(getApplicationContext(), HelloFragment.class.getName()));
+        withSlide(GroupedSlides.instantiate(getApplicationContext(), GroupedSlides.class.getName()));
+        withSlide(EndFragment.instantiate(getApplicationContext(), EndFragment.class.getName()));
+
+        withSlideTransformer(SlideTransformer.ZOOM_OUT_SLIDE);
     }
 }

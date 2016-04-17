@@ -16,9 +16,10 @@
   -->
 
 <resources>
-    <attr name="toggleIndicatorEnabled" format="color|reference"/>
-    <attr name="toggleIndicatorDisabled" format="color|reference"/>
-    <attr name="toggleIndicatorPressed" format="color|reference"/>
+    <attr name="toggleIndicatorsEnabled" format="color|reference"/>
+    <attr name="toggleIndicatorsDisabled" format="color|reference"/>
+    <attr name="toggleIndicatorsPressed" format="color|reference"/>
+    <attr name="toggleIndicatorsBackground" format="color|reference"/>
 
-    <attr name="styleToggleIndicator" format="reference"/>
+    <attr name="styleToggleIndicators" format="reference"/>
 </resources>

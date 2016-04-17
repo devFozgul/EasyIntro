@@ -19,27 +19,27 @@
     <item
         android:state_enabled="false">
         <shape android:shape="oval">
-            <solid android:color="?attr/toggleIndicatorDisabled"/>
+            <solid android:color="?attr/toggleIndicatorsDisabled"/>
         </shape>
     </item>
     <item
         android:state_enabled="true"
         android:state_pressed="true">
         <shape android:shape="oval">
-            <solid android:color="?attr/toggleIndicatorPressed"/>
+            <solid android:color="?attr/toggleIndicatorsPressed"/>
         </shape>
     </item>
     <item
         android:state_enabled="true"
         android:state_focused="true">
         <shape android:shape="oval">
-            <solid android:color="?attr/toggleIndicatorEnabled"/>
+            <solid android:color="?attr/toggleIndicatorsEnabled"/>
         </shape>
     </item>
     <item
         android:state_enabled="true">
         <shape android:shape="oval">
-            <solid android:color="?attr/toggleIndicatorEnabled"/>
+            <solid android:color="?attr/toggleIndicatorsEnabled"/>
         </shape>
     </item>
 </selector>

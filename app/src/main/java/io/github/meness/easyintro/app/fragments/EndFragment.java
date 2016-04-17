@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package io.github.meness.easyintro.app;
+package io.github.meness.easyintro.app.fragments;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -23,11 +23,12 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import io.github.meness.easyintro.EasyIntroFragment;
+import io.github.meness.easyintro.app.R;
 
-public class IntroOneFragment extends EasyIntroFragment {
+public class EndFragment extends EasyIntroFragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.sample_fragment, container, false);
+        return inflater.inflate(R.layout.fragment_end, container, false);
     }
 }

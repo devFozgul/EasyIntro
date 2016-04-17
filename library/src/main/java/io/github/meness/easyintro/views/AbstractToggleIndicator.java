@@ -33,11 +33,11 @@ public abstract class AbstractToggleIndicator extends ImageButton implements Vie
     }
 
     public AbstractToggleIndicator(Context context, AttributeSet attrs) {
-        this(context, attrs, R.attr.styleToggleIndicator);
+        this(context, attrs, R.attr.styleToggleIndicators);
     }
 
     public AbstractToggleIndicator(Context context, AttributeSet attrs, int defStyleAttr) {
-        this(context, attrs, defStyleAttr, R.style.ToggleIndicatorStyle);
+        this(context, attrs, defStyleAttr, R.style.ToggleIndicatorsStyle);
     }
 
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)

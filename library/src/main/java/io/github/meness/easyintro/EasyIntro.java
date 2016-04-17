@@ -52,7 +52,7 @@ import io.github.meness.easyintro.views.LeftToggleIndicator;
 import io.github.meness.easyintro.views.RightToggleIndicator;
 
 public abstract class EasyIntro extends AppCompatActivity implements IEasyIntro, OnToggleIndicatorsClickListener, OnSlideListener, OnNextClickListener, OnPreviousClickListener, OnDoneClickListener, OnSkipClickListener {
-    private static final String TAG = EasyIntro.class.getSimpleName();
+    public static final String TAG = EasyIntro.class.getSimpleName();
     private final EasyPagerAdapter mAdapter = new EasyPagerAdapter(getSupportFragmentManager());
     private ViewGroup mIndicatorsContainer;
     private DirectionalViewPager mPager;
@@ -230,13 +230,8 @@ public abstract class EasyIntro extends AppCompatActivity implements IEasyIntro,
     }
 
     @Override
-    public final void withHidePageIndicator() {
-        mIndicatorsContainer.findViewById(R.id.pageIndicator).setVisibility(View.GONE);
-    }
-
-    @Override
-    public final void withShowPageIndicator() {
-        mIndicatorsContainer.findViewById(R.id.pageIndicator).setVisibility(View.VISIBLE);
+    public final void withPageIndicator(boolean b) {
+        mIndicatorsContainer.findViewById(R.id.pageIndicator).setVisibility(b ? View.VISIBLE : View.GONE);
     }
 
     @Override
@@ -290,8 +285,9 @@ public abstract class EasyIntro extends AppCompatActivity implements IEasyIntro,
     }
 
     @Override
-    public final void withSlide(Fragment fragment) {
-        mAdapter.addFragment(fragment);
+    public final void withSlide(Fragment slide) {
+        mAdapter.addFragment(slide);
+        updateToggleIndicators();
     }
 
     @Override
@@ -425,6 +421,11 @@ public abstract class EasyIntro extends AppCompatActivity implements IEasyIntro,
                 containerHeight.call(mIndicatorsContainer.getHeight());
             }
         });
+    }
+
+    @Override
+    public final void withReplaceSlide(Fragment oldFragment, Fragment newFragment) {
+        mAdapter.replaceFragment(oldFragment, newFragment);
     }
 
     private void setVibrateEnabled() {

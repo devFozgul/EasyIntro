@@ -17,4 +17,9 @@
 <resources>
     <string name="app.name">EasyIntro</string>
     <string name="next_slide">Next Slide</string>
+    <string name="back">Back!</string>
+    <string name="login">Login</string>
+    <string name="join">Join</string>
+    <string name="grouped_slides">Grouped Slides</string>
+    <string name="hello">Hello World</string>
 </resources>

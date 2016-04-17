@@ -15,8 +15,18 @@
   ~ limitations under the License.
   -->
 
-<resources>
-    <color name="toggleIndicatorsEnabledColor">#7f000000</color>
-    <color name="toggleIndicatorsDisabledColor">#7f787878</color>
-    <color name="toggleIndicatorsPressedColor">#bb000000</color>
-</resources>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/colorHelloFragmentBg"
+              android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text="@string/back"
+        android:textAllCaps="true"
+        android:textColor="@android:color/white"
+        android:textSize="30sp"/>
+</LinearLayout>

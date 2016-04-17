@@ -16,7 +16,7 @@
   -->
 
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="colorHelloFragmentBg">#b74145</color>
+    <color name="colorSignFragmentBg">#be2328</color>
+    <color name="colorBackFragmentBg">#8b191d</color>
 </resources>

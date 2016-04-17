@@ -29,81 +29,76 @@ import io.github.meness.easyintro.enums.ToggleIndicators;
 public class EasyIntroFragment extends Fragment implements IEasyIntro {
 
     @Override
-    public final void withTranslucentStatusBar(boolean b) {
+    public void withTranslucentStatusBar(boolean b) {
         getEasyIntro().withTranslucentStatusBar(b);
     }
 
-    protected final EasyIntro getEasyIntro() {
+    public final EasyIntro getEasyIntro() {
         return (EasyIntro) getContext();
     }
 
     @Override
-    public final void withHidePageIndicator() {
-        getEasyIntro().withHidePageIndicator();
+    public void withPageIndicator(boolean b) {
+        getEasyIntro().withPageIndicator(b);
     }
 
     @Override
-    public final void withShowPageIndicator() {
-        getEasyIntro().withShowPageIndicator();
-    }
-
-    @Override
-    public final void withStatusBarColor(@ColorInt int statusBarColor) {
+    public void withStatusBarColor(@ColorInt int statusBarColor) {
         getEasyIntro().withStatusBarColor(statusBarColor);
     }
 
     @Override
-    public final void withNextSlide() {
+    public void withNextSlide() {
         getEasyIntro().withNextSlide();
     }
 
     @Override
-    public final void withPreviousSlide() {
+    public void withPreviousSlide() {
         getEasyIntro().withPreviousSlide();
     }
 
     @Override
-    public final void withSlideTo(int page) {
+    public void withSlideTo(int page) {
         getEasyIntro().withSlideTo(page);
     }
 
     @Override
-    public final Fragment getCurrentSlide() {
+    public Fragment getCurrentSlide() {
         return getEasyIntro().getCurrentSlide();
     }
 
     @Override
-    public final void withOffScreenPageLimit(int limit) {
+    public void withOffScreenPageLimit(int limit) {
         getEasyIntro().withOffScreenPageLimit(limit);
     }
 
     @Override
-    public final void withTransparentStatusBar(boolean b) {
+    public void withTransparentStatusBar(boolean b) {
         getEasyIntro().withTransparentStatusBar(b);
     }
 
     @Override
-    public final void withTransparentNavigationBar(boolean b) {
+    public void withTransparentNavigationBar(boolean b) {
         getEasyIntro().withTransparentNavigationBar(b);
     }
 
     @Override
-    public final void withFullscreen(boolean b) {
+    public void withFullscreen(boolean b) {
         getEasyIntro().withFullscreen(b);
     }
 
     @Override
-    public final void withTranslucentNavigationBar(boolean b) {
+    public void withTranslucentNavigationBar(boolean b) {
         getEasyIntro().withTranslucentNavigationBar(b);
     }
 
     @Override
-    public final void withSlide(Fragment fragment) {
-        getEasyIntro().withSlide(fragment);
+    public void withSlide(Fragment slide) {
+        getEasyIntro().withSlide(slide);
     }
 
     @Override
-    public final void withSlideTransformer(SlideTransformer transformer) {
+    public void withSlideTransformer(SlideTransformer transformer) {
         getEasyIntro().withSlideTransformer(transformer);
     }
 
@@ -200,6 +195,11 @@ public class EasyIntroFragment extends Fragment implements IEasyIntro {
     @Override
     public void getIndicatorsContainerHeight(IndicatorsContainerHeight containerHeight) {
 
+    }
+
+    @Override
+    public void withReplaceSlide(Fragment oldFragment, Fragment newFragment) {
+        getEasyIntro().withReplaceSlide(oldFragment, newFragment);
     }
 
     @Override

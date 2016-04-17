@@ -37,7 +37,6 @@ public class DirectionalViewPager extends ViewPager {
     @Override
     public boolean onInterceptTouchEvent(MotionEvent event) {
         return this.IsSwipeAllowed(event) && super.onInterceptTouchEvent(event);
-
     }
 
     @Override

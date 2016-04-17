@@ -27,9 +27,7 @@ import io.github.meness.easyintro.enums.ToggleIndicators;
 interface IEasyIntro {
     void withTranslucentStatusBar(boolean b);
 
-    void withHidePageIndicator();
-
-    void withShowPageIndicator();
+    void withPageIndicator(boolean b);
 
     void withStatusBarColor(@ColorInt int statusBarColor);
 
@@ -51,7 +49,7 @@ interface IEasyIntro {
 
     void withTranslucentNavigationBar(boolean b);
 
-    void withSlide(Fragment fragment);
+    void withSlide(Fragment slide);
 
     void withSlideTransformer(SlideTransformer transformer);
 
@@ -92,4 +90,6 @@ interface IEasyIntro {
     void withToggleIndicatorsSound(boolean b);
 
     void getIndicatorsContainerHeight(IndicatorsContainerHeight containerHeight);
+
+    void withReplaceSlide(Fragment oldFragment, Fragment newFragment);
 }
