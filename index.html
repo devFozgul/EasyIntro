@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>EasyIntro by meNESS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">EasyIntro</h1>
+      <h2 class="project-tagline">The flexible, easy to use, all in one app intro library for your Android project.</h2>
+      <a href="https://github.com/meNESS/EasyIntro" class="btn">View on GitHub</a>
+      <a href="https://github.com/meNESS/EasyIntro/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/meNESS/EasyIntro/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h1>
+<a id="easyintro---" class="anchor" href="#easyintro---" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>EasyIntro <a href="https://android-arsenal.com/details/1/3448"><img src="https://img.shields.io/badge/Android%20Arsenal-EasyIntro-green.svg?style=true" alt="Android Arsenal"></a> <a href="https://www.codacy.com/app/aesshoferi/EasyIntro"><img src="https://api.codacy.com/project/badge/grade/e93c6273804a4dbc91a298a66fed99be" alt="Codacy Badge"></a> <a href="https://gitter.im/meNESS/EasyIntro?utm_source=badge&amp;utm_medium=badge&amp;utm_campaign=pr-badge"><img src="https://badges.gitter.im/meNESS/EasyIntro.svg" alt="Gitter"></a>
+</h1>
+
+<p><img src="https://raw.githubusercontent.com/meNESS/EasyIntro/master/banner.png" alt="Image"></p>
+
+<blockquote>
+<p>Does your application <strong>contain an Intro</strong>? Do you want to have it <strong>up and running in less than 5 minutes</strong>? Do you want your intro to follow the <strong>Android Design Guidelines</strong>? Do you need <strong>flexibility</strong>? Do you believe Google is wrong with not providing <strong>native intro</strong>? Do you want a <strong>simple and easy</strong> to understand API?</p>
+</blockquote>
+
+<p>If any (or all) of these questions seem familiar, the <strong>EasyIntro</strong> is the perfect library for you.</p>
+
+<p><strong>Never</strong> waste your time again. It provides you with the easiest possible implementation of an intro for your application. There is an Activity and Fragment with lots of methods, provide custom page indicator, custom toggle indicators, custom colors, custom themes, custom slide transformers … No limits for customizations.</p>
+
+<h2>
+<a id="a-quick-overview-whats-in" class="anchor" href="#a-quick-overview-whats-in" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>A Quick Overview What's In</h2>
+
+<ul>
+<li>The easiest possible integration</li>
+<li>Integrate in less than 5 minutes</li>
+<li>Compatible down to API level 13</li>
+<li>Quick and simple API</li>
+<li>Uses the AppCompat support library</li>
+<li>Follows the Google Material Design Guidelines</li>
+<li>Uses vector (.svg) icons</li>
+<li>Modify the slides on the go</li>
+<li>Grouped slides</li>
+<li>Modify intro settings on the go</li>
+<li>Comes with multiple default indicators</li>
+<li>Limit your swipe direction to left and/or right</li>
+<li>Define which toggle indicators to be shown</li>
+<li>You may have all listeners you need</li>
+<li>Abstract toggle indicator</li>
+<li>Fragment to have easy access to your intro methods</li>
+<li>Comes with multiple default slide transformers</li>
+<li>Automatically fix fragment paddings</li>
+<li>Based on a ViewPager</li>
+<li>RTL swipe support</li>
+<li>Customizable</li>
+<li>Tested and stable</li>
+<li>Absolutely no limits</li>
+</ul>
+
+<h2>
+<a id="easyintro-in-action" class="anchor" href="#easyintro-in-action" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>EasyIntro in Action</h2>
+
+<p><a href="http://www.youtube.com/watch?v=JhRS1w-sTOM"><img src="http://img.youtube.com/vi/JhRS1w-sTOM/0.jpg" alt="EasyIntro in Action"></a></p>
+
+<h2>
+<a id="wiki" class="anchor" href="#wiki" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>WIKI</h2>
+
+<p>You surely can find more details on <a href="https://github.com/meNESS/EasyIntro/wiki">the wiki page</a>.</p>
+
+<h2>
+<a id="include-to-project" class="anchor" href="#include-to-project" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Include to Project</h2>
+
+<h3>
+<a id="provide-the-gradle-dependency" class="anchor" href="#provide-the-gradle-dependency" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Provide the Gradle Dependency</h3>
+
+<p>Add the dependency:</p>
+
+<div class="highlight highlight-source-groovy-gradle"><pre><span class="pl-en">dependencies</span> {
+    compile <span class="pl-s"><span class="pl-pds">'</span>io.github.meness:easyintro:x.y.z<span class="pl-pds">'</span></span>
+}</pre></div>
+
+<p><strong>Note:</strong> Replace <code>x.y.z</code> with the latest version which can be found at <a href="https://github.com/meNESS/EasyIntro/releases">releases page</a>.</p>
+
+<h3>
+<a id="clone-or-download-zip-file" class="anchor" href="#clone-or-download-zip-file" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Clone or Download <code>.zip</code> file</h3>
+
+<p>Clone this repository or download the compressed file, then extract to your computer. Simply import the <code>library</code> module to your project.</p>
+
+<h2>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Usage</h2>
+
+<p>Create your Fragments which extend <code>EasyIntroFragment</code> and provide your desired layout resource as you always do:</p>
+
+<div class="highlight highlight-source-java"><pre><span class="pl-k">public</span> <span class="pl-k">class</span> <span class="pl-en">IntroOneFragment</span> <span class="pl-k">extends</span> <span class="pl-e">EasyIntroFragment</span> {
+    <span class="pl-k">@Override</span>
+    <span class="pl-k">public</span> <span class="pl-smi">View</span> <span class="pl-en">onCreateView</span>(<span class="pl-smi">LayoutInflater</span> <span class="pl-v">inflater</span>, <span class="pl-smi">ViewGroup</span> <span class="pl-v">container</span>, <span class="pl-smi">Bundle</span> <span class="pl-v">savedInstanceState</span>) {
+        <span class="pl-k">return</span> inflater<span class="pl-k">.</span>inflate(<span class="pl-smi">R</span><span class="pl-k">.</span>layout<span class="pl-k">.</span>intro_one, container, <span class="pl-c1">false</span>);
+    }
+}</pre></div>
+
+<p><strong>Note:</strong> By extending <code>EasyIntroFragment</code> you have easier access to the intro methods and the layout bottom padding will be modified automatically.</p>
+
+<p>Create an activity which extends <code>EasyIntro</code> and override the necessary <code>init()</code> method:</p>
+
+<div class="highlight highlight-source-java"><pre><span class="pl-k">public</span> <span class="pl-k">class</span> <span class="pl-en">MyEasyIntro</span> <span class="pl-k">extends</span> <span class="pl-e">EasyIntro</span> {
+
+    <span class="pl-c">// override all listeners you need</span>
+
+    <span class="pl-k">@Override</span>
+    <span class="pl-k">protected</span> <span class="pl-k">void</span> <span class="pl-en">init</span>() {
+        <span class="pl-c">// use withSlide() to add Fragments and</span>
+        <span class="pl-c">// modify intro settings here</span>
+    }
+}</pre></div>
+
+<p><strong>Note:</strong> For more details about listeners, intro settings, customizing colors, and all other things <a href="https://github.com/meNESS/EasyIntro/wiki">visit wiki</a>.</p>
+
+<p>Define your activity in your <code>Manifest.xml</code>:</p>
+
+<div class="highlight highlight-text-xml"><pre>&lt;<span class="pl-ent">activity</span>
+    <span class="pl-e">android</span><span class="pl-e">:</span><span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>.MyEasyIntro<span class="pl-pds">"</span></span>
+    <span class="pl-e">android</span><span class="pl-e">:</span><span class="pl-e">theme</span>=<span class="pl-s"><span class="pl-pds">"</span>@style/EasyIntro<span class="pl-pds">"</span></span>/&gt;</pre></div>
+
+<p><strong>Note:</strong> This is good to give your intro activity a theme which has <code>EasyIntro</code> as a parent.</p>
+
+<h2>
+<a id="libraries-used" class="anchor" href="#libraries-used" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Libraries Used</h2>
+
+<ul>
+<li><a href="https://github.com/mikepenz/Materialize">Materialize</a></li>
+<li><a href="https://github.com/ToxicBakery/ViewPagerTransforms">ViewPagerTransforms</a></li>
+<li><a href="https://github.com/chenupt/SpringIndicator">SpringIndicator</a></li>
+<li><a href="https://github.com/ongakuer/CircleIndicator">CircleIndicator</a></li>
+</ul>
+
+<h2>
+<a id="credits" class="anchor" href="#credits" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Credits</h2>
+
+<ul>
+<li>Mike Penz - <a href="https://github.com/mikepenz">Github</a>
+
+<ul>
+<li>For the good <code>.README</code> appearance.</li>
+</ul>
+</li>
+</ul>
+
+<h2>
+<a id="developed-by" class="anchor" href="#developed-by" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Developed By</h2>
+
+<ul>
+<li>Alireza Eskandarpour Shoferi
+
+<ul>
+<li>
+<a href="https://twitter.com/enormoustheory">Twitter</a> - <a href="mailto:aesshoferi@gmail.com">aesshoferi@gmail.com</a>
+</li>
+</ul>
+</li>
+</ul>
+
+<h2>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>License</h2>
+
+<pre><code>Copyright 2016 Alireza Eskandarpour Shoferi
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+</code></pre>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/meNESS/EasyIntro">EasyIntro</a> is maintained by <a href="https://github.com/meNESS">meNESS</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
