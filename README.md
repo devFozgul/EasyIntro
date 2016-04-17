@@ -31,8 +31,8 @@ If any (or all) of these questions seem familiar, the **EasyIntro** is the perfe
 * Tested and stable
 * Absolutely no limits
 
-## Demo
-![Image](https://raw.githubusercontent.com/meNESS/EasyIntro/master/demo.gif)
+## EasyIntro in Action
+[![EasyIntro in Action](http://img.youtube.com/vi/JhRS1w-sTOM/0.jpg)](http://www.youtube.com/watch?v=JhRS1w-sTOM)
 
 ## WIKI
 You surely can find more details on [the wiki page](https://github.com/meNESS/EasyIntro/wiki).
