@@ -18,8 +18,8 @@ package io.github.meness.easyintro.app;
 
 import io.github.meness.easyintro.EasyIntro;
 import io.github.meness.easyintro.app.fragments.EndFragment;
-import io.github.meness.easyintro.app.fragments.HelloFragment;
 import io.github.meness.easyintro.app.fragments.GroupedSlides;
+import io.github.meness.easyintro.app.fragments.HelloFragment;
 import io.github.meness.easyintro.enums.SlideTransformer;
 
 public class MyEasyIntro extends EasyIntro {

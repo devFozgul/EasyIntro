@@ -19,9 +19,12 @@ package io.github.meness.easyintro;
 import android.graphics.drawable.Drawable;
 import android.support.annotation.ColorInt;
 import android.support.annotation.DrawableRes;
+import android.support.annotation.RawRes;
 import android.support.v4.app.Fragment;
 
+import io.github.meness.easyintro.enums.PageIndicator;
 import io.github.meness.easyintro.enums.SlideTransformer;
+import io.github.meness.easyintro.enums.SwipeDirection;
 import io.github.meness.easyintro.enums.ToggleIndicators;
 
 interface IEasyIntro {
@@ -92,4 +95,16 @@ interface IEasyIntro {
     void getIndicatorsContainerHeight(IndicatorsContainerHeight containerHeight);
 
     void withReplaceSlide(Fragment oldFragment, Fragment newFragment);
+
+    void withSlideSound(@RawRes int sound);
+
+    void withOverScrollMode(int mode);
+
+    void withPageIndicator(PageIndicator pageIndicator);
+
+    void withLock(boolean b, Fragment lock);
+
+    boolean isLocked();
+
+    SwipeDirection getSwipeDirection();
 }

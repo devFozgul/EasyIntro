@@ -26,7 +26,6 @@ import android.widget.ImageButton;
 import io.github.meness.easyintro.R;
 
 public abstract class AbstractToggleIndicator extends ImageButton implements View.OnClickListener {
-    private boolean mDisabled;
 
     public AbstractToggleIndicator(Context context) {
         this(context, null);
@@ -48,24 +47,19 @@ public abstract class AbstractToggleIndicator extends ImageButton implements Vie
     }
 
     public boolean isDisabled() {
-        return mDisabled;
+        return isEnabled();
     }
 
     public void withDisabled(boolean b) {
-        mDisabled = b;
         if (b) {
-            disable();
+            // disable
+            setOnClickListener(null);
+            setEnabled(false);
         } else {
-            enable();
+            // enable
+            setOnClickListener(this);
+            setEnabled(true);
         }
-    }
-
-    private void disable() {
-        setOnClickListener(null);
-    }
-
-    private void enable() {
-        setOnClickListener(this);
     }
 
     public boolean isVisible() {

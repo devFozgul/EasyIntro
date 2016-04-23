@@ -28,7 +28,7 @@ import io.github.meness.easyintro.app.R;
 public class GroupedSlides extends EasyIntroSlidesInside {
 
     @Override
-    public void init() {
+    protected void init() {
         // add slides into the group
         withSlide(instantiate(getContext(), BackFragment.class.getName()));
         withSlide(instantiate(getContext(), BackFragment.class.getName()));

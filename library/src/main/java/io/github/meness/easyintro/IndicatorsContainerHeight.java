@@ -16,6 +16,9 @@
 
 package io.github.meness.easyintro;
 
+/**
+ * It's just a helper.
+ */
 public abstract class IndicatorsContainerHeight {
     public abstract void call(int height);
 }

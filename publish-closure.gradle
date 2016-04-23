@@ -14,12 +14,17 @@
  * limitations under the License.
  */
 
+Properties properties = new Properties()
+properties.load(project.rootProject.file('local.properties').newDataInputStream())
+
 publish {
     dryRun = false
-    userOrg = project.property("POM_DEVELOPER_ID")
-    groupId = project.property("GROUP")
-    artifactId = project.property("POM_ARTIFACT_ID")
-    publishVersion = project.property("VERSION_NAME")
-    desc = project.property("POM_DESCRIPTION")
-    website = project.property("POM_URL")
+    userOrg = 'meness'
+    groupId = 'io.github.meness'
+    artifactId = 'easyintro'
+    version = rootProject.ext.versionName
+    desc = 'The flexible, easy to use, all in one app intro library for your Android project.'
+    website = 'https://github.com/meNESS/EasyIntro'
+    bintrayUser = properties.getProperty('bintray.user')
+    bintrayKey = properties.getProperty('bintray.apikey')
 }

@@ -20,6 +20,7 @@ import android.graphics.drawable.Drawable;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Vibrator;
+import android.support.annotation.CallSuper;
 import android.support.annotation.ColorInt;
 import android.support.annotation.DrawableRes;
 import android.support.annotation.LayoutRes;
@@ -41,19 +42,14 @@ import io.github.meness.easyintro.enums.PageIndicator;
 import io.github.meness.easyintro.enums.SlideTransformer;
 import io.github.meness.easyintro.enums.SwipeDirection;
 import io.github.meness.easyintro.enums.ToggleIndicators;
-import io.github.meness.easyintro.listeners.OnDoneClickListener;
-import io.github.meness.easyintro.listeners.OnNextClickListener;
-import io.github.meness.easyintro.listeners.OnPreviousClickListener;
-import io.github.meness.easyintro.listeners.OnSkipClickListener;
-import io.github.meness.easyintro.listeners.OnSlideListener;
 import io.github.meness.easyintro.listeners.OnToggleIndicatorsClickListener;
 import io.github.meness.easyintro.views.DirectionalViewPager;
 import io.github.meness.easyintro.views.LeftToggleIndicator;
 import io.github.meness.easyintro.views.RightToggleIndicator;
 
-public abstract class EasyIntro extends AppCompatActivity implements IEasyIntro, OnToggleIndicatorsClickListener, OnSlideListener, OnNextClickListener, OnPreviousClickListener, OnDoneClickListener, OnSkipClickListener {
+public abstract class EasyIntro extends AppCompatActivity implements IEasyIntro, OnToggleIndicatorsClickListener {
     public static final String TAG = EasyIntro.class.getSimpleName();
-    private final EasyPagerAdapter mAdapter = new EasyPagerAdapter(getSupportFragmentManager());
+    private final EasyIntroPagerAdapter mAdapter = new EasyIntroPagerAdapter(getSupportFragmentManager());
     private ViewGroup mIndicatorsContainer;
     private DirectionalViewPager mPager;
     private MaterializeBuilder materializeBuilder;
@@ -69,9 +65,13 @@ public abstract class EasyIntro extends AppCompatActivity implements IEasyIntro,
     private int mVibrateIntensity = 20;
     private boolean mVibrate;
     private boolean mRtlSwipe;
+    private boolean mRightIndicatorEnabled = true;
+    private boolean mLeftIndicatorEnabled = true;
+    private SwipeDirection mSwipeDirection = SwipeDirection.ALL;
+    private Fragment mLockOn;
 
-    @Override
-    public void onSlide(Fragment fragment) {
+    @CallSuper
+    public void onSlideChanged(Fragment fragment) {
         if (mSoundRes != 0) {
             MediaPlayer.create(getApplicationContext(), mSoundRes).start();
         }
@@ -80,6 +80,10 @@ public abstract class EasyIntro extends AppCompatActivity implements IEasyIntro,
         }
 
         updateToggleIndicators();
+
+        if (fragment == mLockOn) {
+            lockEverything(true);
+        }
     }
 
     private void updateToggleIndicators() {
@@ -132,6 +136,16 @@ public abstract class EasyIntro extends AppCompatActivity implements IEasyIntro,
         }
     }
 
+    private void lockEverything(boolean b) {
+        if (b) {
+            mPager.setAllowedSwipeDirection(SwipeDirection.NONE);
+        } else {
+            withSwipeDirection(mSwipeDirection);
+        }
+        mLeftIndicator.withDisabled(mLeftIndicatorEnabled);
+        mRightIndicator.withDisabled(mRightIndicatorEnabled);
+    }
+
     private void hideLeftIndicator() {
         mLeftIndicator.hide();
     }
@@ -148,6 +162,11 @@ public abstract class EasyIntro extends AppCompatActivity implements IEasyIntro,
         mLeftIndicator.show();
     }
 
+    private void withSwipeDirection(SwipeDirection direction) {
+        mSwipeDirection = direction;
+        mPager.setAllowedSwipeDirection(direction);
+    }
+
     @Override
     public final void onRightToggleClick() {
         int slidesCount = mAdapter.getCount() - 1;
@@ -156,18 +175,18 @@ public abstract class EasyIntro extends AppCompatActivity implements IEasyIntro,
 
         // we're on the last slide
         if (currentItem == slidesCount) {
-            onDoneClick(mAdapter.getRegisteredFragment(currentItem));
+            onDonePressed(mAdapter.getRegisteredFragment(currentItem));
         }
         // we're going to the last slide
         else if (nextItem == slidesCount) {
             mLeftIndicator.makeItPrevious();
             mRightIndicator.makeItDone();
-            onNextClick(mAdapter.getRegisteredFragment(nextItem));
+            onNextPressed(mAdapter.getRegisteredFragment(nextItem));
         }
         // we're going to the next slide
         else {
             mLeftIndicator.makeItPrevious();
-            onNextClick(mAdapter.getRegisteredFragment(currentItem));
+            onNextPressed(mAdapter.getRegisteredFragment(currentItem));
         }
     }
 
@@ -178,39 +197,39 @@ public abstract class EasyIntro extends AppCompatActivity implements IEasyIntro,
 
         // we're on the first slide
         if (currentItem == 0) {
-            onSkipClick(mAdapter.getRegisteredFragment(currentItem));
+            onSkipPressed(mAdapter.getRegisteredFragment(currentItem));
         }
         // we're going to the first slide
         else if (previousItem == 0) {
             mRightIndicator.makeItNext();
             mLeftIndicator.makeItSkip();
-            onPreviousClick(mAdapter.getRegisteredFragment(previousItem));
+            onPreviousPressed(mAdapter.getRegisteredFragment(previousItem));
         }
         // we're going to the previous slide
         else {
             mRightIndicator.makeItNext();
             mLeftIndicator.makeItPrevious();
-            onPreviousClick(mAdapter.getRegisteredFragment(currentItem));
+            onPreviousPressed(mAdapter.getRegisteredFragment(currentItem));
         }
     }
 
-    @Override
-    public void onSkipClick(Fragment fragment) {
+    @CallSuper
+    public void onSkipPressed(Fragment fragment) {
         // empty
     }
 
-    @Override
-    public void onPreviousClick(Fragment fragment) {
+    @CallSuper
+    public void onPreviousPressed(Fragment fragment) {
         withPreviousSlide();
     }
 
-    @Override
-    public void onDoneClick(Fragment fragment) {
+    @CallSuper
+    public void onDonePressed(Fragment fragment) {
         // empty
     }
 
-    @Override
-    public void onNextClick(Fragment fragment) {
+    @CallSuper
+    public void onNextPressed(Fragment fragment) {
         withNextSlide();
     }
 
@@ -302,6 +321,7 @@ public abstract class EasyIntro extends AppCompatActivity implements IEasyIntro,
 
     @Override
     public final void withRightIndicatorDisabled(boolean b) {
+        mRightIndicatorEnabled = b;
         mRightIndicator.withDisabled(b);
     }
 
@@ -322,6 +342,7 @@ public abstract class EasyIntro extends AppCompatActivity implements IEasyIntro,
 
     @Override
     public final void withLeftIndicatorDisabled(boolean b) {
+        mLeftIndicatorEnabled = b;
         mLeftIndicator.withDisabled(b);
     }
 
@@ -428,18 +449,7 @@ public abstract class EasyIntro extends AppCompatActivity implements IEasyIntro,
         mAdapter.replaceFragment(oldFragment, newFragment);
     }
 
-    private void setVibrateEnabled() {
-        if (!AndroidUtils.hasVibratePermission(getApplicationContext())) {
-            Log.d(TAG, getString(R.string.exception_permission_vibrate));
-            return;
-        }
-        mVibrate = true;
-    }
-
-    private void withSwipeDirection(SwipeDirection direction) {
-        mPager.setAllowedSwipeDirection(direction);
-    }
-
+    @Override
     /**
      * Play a sound while sliding.
      * Pass 0 for no sound (default)
@@ -450,11 +460,51 @@ public abstract class EasyIntro extends AppCompatActivity implements IEasyIntro,
         mSoundRes = sound;
     }
 
+    @Override
     /**
      * @see android.view.View#setOverScrollMode(int)
      */
     public final void withOverScrollMode(int mode) {
         mPager.setOverScrollMode(mode);
+    }
+
+    @Override
+    /**
+     * Set predefined indicator.
+     * Indicator could be set once inside {@link #init()}.
+     *
+     * @param pageIndicator Custom indicator
+     */
+    public final void withPageIndicator(PageIndicator pageIndicator) {
+        mIndicatorRes = pageIndicator.getIndicatorRes();
+    }
+
+    @Override
+    public void withLock(boolean b, Fragment lock) {
+        if (b) {
+            mLockOn = lock;
+        } else {
+            mLockOn = null;
+            lockEverything(false);
+        }
+    }
+
+    @Override
+    public boolean isLocked() {
+        return getSwipeDirection() == SwipeDirection.NONE;
+    }
+
+    @Override
+    public SwipeDirection getSwipeDirection() {
+        return mPager.getSwipeDirection();
+    }
+
+    private void setVibrateEnabled() {
+        if (!AndroidUtils.hasVibratePermission(getApplicationContext())) {
+            Log.d(TAG, getString(R.string.exception_permission_vibrate));
+            return;
+        }
+        mVibrate = true;
     }
 
     @Override
@@ -497,16 +547,6 @@ public abstract class EasyIntro extends AppCompatActivity implements IEasyIntro,
         setViewPagerToPageIndicator();
     }
 
-    /**
-     * Set predefined indicator.
-     * Indicator could be set once inside {@link #init()}.
-     *
-     * @param pageIndicator Custom indicator
-     */
-    public final void withPageIndicator(PageIndicator pageIndicator) {
-        mIndicatorRes = pageIndicator.getIndicatorRes();
-    }
-
     private void setViewPagerToPageIndicator() {
         try {
             View view = mIndicatorsContainer.findViewById(R.id.pageIndicator);
@@ -528,7 +568,7 @@ public abstract class EasyIntro extends AppCompatActivity implements IEasyIntro,
         @Override
         public void onPageSelected(int position) {
             super.onPageSelected(position);
-            onSlide(mAdapter.getItem(position));
+            onSlideChanged(mAdapter.getItem(position));
         }
     }
 }

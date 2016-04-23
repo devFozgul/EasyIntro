@@ -46,14 +46,13 @@ public abstract class EasyIntroSlidesInside extends EasyIntroFragment {
             init();
             mFirstInit = true;
         }
-
     }
 
     private void withMainSlide(Fragment fragment) {
         mSlidesInside.add(fragment);
     }
 
-    public abstract void init();
+    protected abstract void init();
 
     /**
      * @param location Slide location inside the group
@@ -70,7 +69,7 @@ public abstract class EasyIntroSlidesInside extends EasyIntroFragment {
 
     public static class EasyIntroSlidesInsideFragment extends EasyIntroSlidesInside {
         @Override
-        public void init() {
+        protected void init() {
             // necessary, empty
         }
     }

@@ -26,12 +26,16 @@ import io.github.meness.easyintro.enums.SwipeDirection;
 
 public class DirectionalViewPager extends ViewPager {
 
-    private float initialXValue;
-    private SwipeDirection direction;
+    private float mInitialXValue;
+    private SwipeDirection mSwipeDirection;
 
     public DirectionalViewPager(Context context, AttributeSet attrs) {
         super(context, attrs);
-        this.direction = SwipeDirection.ALL;
+        this.mSwipeDirection = SwipeDirection.ALL;
+    }
+
+    public SwipeDirection getSwipeDirection() {
+        return mSwipeDirection;
     }
 
     @Override
@@ -46,23 +50,23 @@ public class DirectionalViewPager extends ViewPager {
     }
 
     private boolean IsSwipeAllowed(MotionEvent event) {
-        if (this.direction == SwipeDirection.ALL) return true;
+        if (this.mSwipeDirection == SwipeDirection.ALL) return true;
 
-        if (direction == SwipeDirection.NONE)//disable any swipe
+        if (mSwipeDirection == SwipeDirection.NONE)//disable any swipe
             return false;
 
         if (event.getAction() == MotionEvent.ACTION_DOWN) {
-            initialXValue = event.getX();
+            mInitialXValue = event.getX();
             return true;
         }
 
         if (event.getAction() == MotionEvent.ACTION_MOVE) {
             try {
-                float diffX = event.getX() - initialXValue;
-                if (diffX > 0 && direction == SwipeDirection.LEFT) {
+                float diffX = event.getX() - mInitialXValue;
+                if (diffX > 0 && mSwipeDirection == SwipeDirection.LEFT) {
                     // swipe from left to right detected
                     return false;
-                } else if (diffX < 0 && direction == SwipeDirection.RIGHT) {
+                } else if (diffX < 0 && mSwipeDirection == SwipeDirection.RIGHT) {
                     // swipe from right to left detected
                     return false;
                 }
@@ -75,6 +79,6 @@ public class DirectionalViewPager extends ViewPager {
     }
 
     public void setAllowedSwipeDirection(SwipeDirection direction) {
-        this.direction = direction;
+        this.mSwipeDirection = direction;
     }
 }

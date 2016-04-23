@@ -22,10 +22,10 @@ import android.support.v4.app.FragmentManager;
 import java.util.ArrayList;
 import java.util.List;
 
-class EasyPagerAdapter extends SmartFragmentStatePagerAdapter {
+class EasyIntroPagerAdapter extends SmartFragmentStatePagerAdapter {
     private final List<Fragment> mFragments = new ArrayList<>();
 
-    public EasyPagerAdapter(FragmentManager fm) {
+    public EasyIntroPagerAdapter(FragmentManager fm) {
         super(fm);
     }
 

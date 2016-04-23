@@ -21,9 +21,12 @@ import android.os.Bundle;
 import android.support.annotation.ColorInt;
 import android.support.annotation.DrawableRes;
 import android.support.annotation.Nullable;
+import android.support.annotation.RawRes;
 import android.support.v4.app.Fragment;
 
+import io.github.meness.easyintro.enums.PageIndicator;
 import io.github.meness.easyintro.enums.SlideTransformer;
+import io.github.meness.easyintro.enums.SwipeDirection;
 import io.github.meness.easyintro.enums.ToggleIndicators;
 
 public class EasyIntroFragment extends Fragment implements IEasyIntro {
@@ -194,12 +197,42 @@ public class EasyIntroFragment extends Fragment implements IEasyIntro {
 
     @Override
     public void getIndicatorsContainerHeight(IndicatorsContainerHeight containerHeight) {
-
+        getEasyIntro().getIndicatorsContainerHeight(containerHeight);
     }
 
     @Override
     public void withReplaceSlide(Fragment oldFragment, Fragment newFragment) {
         getEasyIntro().withReplaceSlide(oldFragment, newFragment);
+    }
+
+    @Override
+    public void withSlideSound(@RawRes int sound) {
+        getEasyIntro().withSlideSound(sound);
+    }
+
+    @Override
+    public void withOverScrollMode(int mode) {
+        getEasyIntro().withOverScrollMode(mode);
+    }
+
+    @Override
+    public void withPageIndicator(PageIndicator pageIndicator) {
+        getEasyIntro().withPageIndicator(pageIndicator);
+    }
+
+    @Override
+    public void withLock(boolean b, Fragment lock) {
+        getEasyIntro().withLock(b, lock);
+    }
+
+    @Override
+    public boolean isLocked() {
+        return getEasyIntro().isLocked();
+    }
+
+    @Override
+    public SwipeDirection getSwipeDirection() {
+        return getEasyIntro().getSwipeDirection();
     }
 
     @Override
