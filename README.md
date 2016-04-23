@@ -15,7 +15,7 @@ If any (or all) of these questions seem familiar, the **EasyIntro** is the perfe
 * Follows the Google Material Design Guidelines
 * Uses vector (.svg) icons
 * Modify the slides on the go
-* Grouped slides
+* **The Most Notable:** Grouped slides
 * Modify intro settings on the go
 * Comes with multiple default indicators
 * Limit your swipe direction to left and/or right
