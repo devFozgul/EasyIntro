@@ -40,16 +40,16 @@ public class DirectionalViewPager extends ViewPager {
 
     @Override
     public boolean onInterceptTouchEvent(MotionEvent event) {
-        return this.IsSwipeAllowed(event) && super.onInterceptTouchEvent(event);
+        return this.isSwipeAllowed(event) && super.onInterceptTouchEvent(event);
     }
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-        return this.IsSwipeAllowed(event) && super.onTouchEvent(event);
+        return this.isSwipeAllowed(event) && super.onTouchEvent(event);
 
     }
 
-    private boolean IsSwipeAllowed(MotionEvent event) {
+    private boolean isSwipeAllowed(MotionEvent event) {
         if (this.mSwipeDirection == SwipeDirection.ALL) return true;
 
         if (mSwipeDirection == SwipeDirection.NONE)//disable any swipe
