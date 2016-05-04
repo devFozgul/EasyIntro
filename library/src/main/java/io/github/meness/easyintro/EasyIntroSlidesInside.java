@@ -26,8 +26,8 @@ import java.util.List;
 public abstract class EasyIntroSlidesInside extends EasyIntroFragment {
     // first slide is the main one
     private static List<Fragment> mSlidesInside = new ArrayList<>();
-    private static int mCurrentSlideLocation = 0;
-    private static boolean mFirstInit;
+    private  int mCurrentSlideLocation = 0;
+    private  boolean mFirstInit;
 
     public final void withSlide(Fragment fragment) {
         mSlidesInside.add(fragment);
